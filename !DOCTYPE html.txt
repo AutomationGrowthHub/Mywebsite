@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Automation Growth Hub — GoHighLevel at $164/yr</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+[data-theme="dark"]{--bg:#07090f;--bg2:#0c1018;--bg3:#111620;--text:#e8edf5;--muted:#6b7591;--card:rgba(255,255,255,0.03);--border:rgba(184,255,87,0.12);--tool-bg:rgba(255,255,255,0.04);--tool-border:rgba(255,255,255,0.08);--shadow:rgba(0,0,0,0.5)}
+[data-theme="light"]{--bg:#f4f7ee;--bg2:#eaf0e0;--bg3:#dfe8cf;--text:#0d1117;--muted:#5a6175;--card:rgba(0,0,0,0.03);--border:rgba(80,140,0,0.18);--tool-bg:rgba(0,0,0,0.04);--tool-border:rgba(0,0,0,0.1);--shadow:rgba(0,0,0,0.15)}
+:root{--accent:#b8ff57;--accent2:#7effd4}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;transition:background 0.3s,color 0.3s}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.35}
+
+/* THEME TOGGLE */
+.theme-toggle{position:fixed;top:22px;right:22px;z-index:500;background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:7px 16px;cursor:pointer;font-size:0.78rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:6px;transition:all 0.2s;font-family:'Manrope',sans-serif;letter-spacing:0.03em}
+.theme-toggle:hover{color:var(--text);border-color:var(--accent)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;background:rgba(7,9,15,0.75);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+[data-theme="light"] nav{background:rgba(244,247,238,0.85)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
+.logo span{color:var(--accent)}
+.logo-icon{width:34px;height:34px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#07090f;padding:10px 24px;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none;transition:opacity 0.2s,transform 0.2s}
+.nav-cta:hover{opacity:0.85;transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 40px 100px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(ellipse at center,rgba(184,255,87,0.08) 0%,transparent 70%);pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:drift 12s ease-in-out infinite alternate}
+.orb-1{width:400px;height:400px;background:rgba(184,255,87,0.07);top:-100px;right:-100px}
+.orb-2{width:300px;height:300px;background:rgba(126,255,212,0.06);bottom:0;left:-80px;animation-delay:-4s}
+.orb-3{width:200px;height:200px;background:rgba(184,255,87,0.05);bottom:200px;right:200px;animation-delay:-8s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(30px,40px) scale(1.1)}}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(184,255,87,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(184,255,87,0.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(184,255,87,0.08);border:1px solid rgba(184,255,87,0.25);border-radius:100px;padding:6px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:32px;animation:fadeUp 0.8s ease both}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.04;letter-spacing:-0.03em;max-width:900px;animation:fadeUp 0.8s 0.1s ease both}
+.hero h1 em{font-style:normal;color:var(--accent);position:relative}
+.hero h1 em::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:3px;background:var(--accent);border-radius:2px;opacity:0.5}
+.hero-sub{margin-top:28px;font-size:1.15rem;color:var(--muted);max-width:580px;line-height:1.7;animation:fadeUp 0.8s 0.2s ease both}
+.hero-price-pill{margin-top:44px;display:flex;align-items:center;justify-content:center;gap:20px;animation:fadeUp 0.8s 0.3s ease both;flex-wrap:wrap}
+.price-main{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);line-height:1;letter-spacing:-0.04em}
+.price-main sup{font-size:1.5rem;vertical-align:super}
+.price-meta{text-align:left}
+.price-meta .per{font-size:0.9rem;color:var(--muted)}
+.price-meta .save{font-size:0.85rem;font-weight:700;color:var(--accent2);background:rgba(126,255,212,0.1);border-radius:6px;padding:2px 8px;display:inline-block;margin-top:2px}
+.price-divider{width:1px;height:50px;background:var(--border)}
+.was-price{text-align:left}
+.was-price .label{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em}
+.was-price .amount{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;color:var(--muted);text-decoration:line-through}
+.hero-ctas{margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s 0.4s ease both}
+.btn-primary{background:var(--accent);color:#07090f;padding:16px 36px;border-radius:12px;font-weight:800;font-size:0.95rem;text-decoration:none;letter-spacing:0.01em;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;border:none;cursor:pointer;font-family:'Manrope',sans-serif}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(184,255,87,0.3),0 0 0 4px rgba(184,255,87,0.1)}
+.btn-secondary{background:transparent;color:var(--text);padding:16px 32px;border-radius:12px;font-weight:600;font-size:0.95rem;text-decoration:none;border:1px solid rgba(255,255,255,0.12);transition:all 0.25s;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+.hero-stats{margin-top:72px;display:flex;gap:60px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s 0.5s ease both}
+.stat{text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;line-height:1}
+.stat-label{font-size:0.8rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.06em}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* SHARED */
+section{padding:100px 40px}
+.container{max-width:1100px;margin:0 auto}
+.section-tag{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:rgba(184,255,87,0.08);border:1px solid rgba(184,255,87,0.2);padding:5px 14px;border-radius:100px;margin-bottom:20px}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:16px}
+.section-sub{color:var(--muted);font-size:1.05rem;max-width:520px;line-height:1.7}
+
+/* MARQUEE */
+.marquee-section{padding:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);overflow:hidden}
+.marquee-track{display:flex;width:max-content;animation:marquee 28s linear infinite;padding:18px 0}
+.marquee-item{display:flex;align-items:center;gap:12px;padding:0 40px;font-size:0.82rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap;border-right:1px solid var(--border)}
+.marquee-item span{color:var(--accent)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SLOTS BAR */
+.slots-section{padding:36px 40px;background:var(--bg2);border-bottom:1px solid var(--border)}
+.slots-inner{max-width:680px;margin:0 auto;text-align:center}
+.slots-label{font-size:0.82rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.slots-label strong{color:#ff6b6b;font-size:1rem}
+.slots-bar-wrap{background:rgba(255,255,255,0.06);border-radius:100px;height:14px;overflow:hidden;margin-bottom:10px;border:1px solid var(--border)}
+.slots-bar{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--accent2),var(--accent));width:0;transition:width 1.5s cubic-bezier(.34,1.1,.64,1);position:relative;overflow:hidden}
+.slots-bar::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:shimmer 2s infinite}
+@keyframes shimmer{to{left:200%}}
+.slots-count{font-size:0.85rem;color:var(--muted)}
+.slots-count strong{color:#ff6b6b;font-weight:800}
+
+/* HOW IT WORKS */
+.hiw-section{background:var(--bg2)}
+.hiw-header{text-align:center;margin-bottom:60px}
+.hiw-header .section-sub{margin:0 auto}
+.hiw-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.hiw-step{background:var(--bg2);padding:40px 32px;position:relative;transition:background 0.25s}
+.hiw-step:hover{background:var(--bg3)}
+.hiw-num{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:rgba(184,255,87,0.1);line-height:1;margin-bottom:16px;letter-spacing:-0.04em}
+.hiw-icon{font-size:1.8rem;margin-bottom:14px;display:block}
+.hiw-step h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:10px}
+.hiw-step p{font-size:0.88rem;color:var(--muted);line-height:1.65}
+.hiw-arrow{position:absolute;top:44px;right:-14px;width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#07090f;font-weight:800;z-index:2}
+
+/* TOOLS */
+.tools-section{background:var(--bg)}
+.tools-header{text-align:center;margin-bottom:52px}
+.tools-header .section-sub{margin:0 auto}
+.tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:36px}
+.tool-card{background:var(--tool-bg);border:1px solid var(--tool-border);border-radius:16px;padding:24px 16px;text-align:center;position:relative;transition:all 0.25s}
+.tool-card:hover{border-color:rgba(255,107,107,0.3);transform:translateY(-3px)}
+.tool-emoji{font-size:2rem;margin-bottom:10px;display:block}
+.tool-name{font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:4px}
+.tool-price{font-size:0.75rem;color:#ff6b6b;font-weight:700}
+.tool-x{position:absolute;top:8px;right:8px;font-size:0.65rem;color:#ff6b6b;font-weight:800;background:rgba(255,107,107,0.12);border-radius:4px;padding:2px 5px;letter-spacing:0.04em}
+.tools-total{text-align:center;padding:28px 32px;background:rgba(255,107,107,0.05);border:1px solid rgba(255,107,107,0.15);border-radius:16px;margin-bottom:20px}
+.tools-total p{color:var(--muted);font-size:0.9rem;margin-bottom:16px}
+.tools-vs{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.vs-item{text-align:center}
+.vs-num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;line-height:1}
+.vs-label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px}
+.vs-sep{font-size:1.8rem;color:var(--border);font-weight:300}
+.bad-price{color:#ff6b6b;text-decoration:line-through}
+.good-price{color:var(--accent)}
+.save-price{color:var(--accent2)}
+
+/* BEFORE / AFTER */
+.ba-section{background:var(--bg2)}
+.ba-header{text-align:center;margin-bottom:52px}
+.ba-header .section-sub{margin:0 auto}
+.ba-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--border);border-radius:20px;overflow:hidden;border:1px solid var(--border)}
+.ba-col{padding:40px 36px}
+.ba-col.before{background:rgba(255,107,107,0.04)}
+.ba-col.after{background:rgba(184,255,87,0.04)}
+.ba-col-label{font-size:0.7rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.ba-col.before .ba-col-label{color:#ff6b6b}
+.ba-col.after .ba-col-label{color:var(--accent)}
+.ba-list{display:flex;flex-direction:column;gap:14px}
+.ba-item{display:flex;align-items:flex-start;gap:12px;font-size:0.9rem}
+.ba-col.before .ba-item{color:var(--muted)}
+.ba-col.after .ba-item{color:var(--text)}
+.ba-item .bi{flex-shrink:0;margin-top:2px}
+
+/* VIDEO */
+.video-section{background:var(--bg)}
+.video-header{text-align:center;margin-bottom:48px}
+.video-header .section-sub{margin:0 auto}
+.video-wrap{max-width:780px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:0 0 60px rgba(184,255,87,0.08),0 24px 60px var(--shadow)}
+.video-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#0c1018 0%,#111620 100%);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden}
+.video-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,255,87,0.07) 0%,transparent 70%)}
+.video-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(184,255,87,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(184,255,87,0.04) 1px,transparent 1px);background-size:40px 40px}
+.play-btn{width:80px;height:80px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;transition:all 0.3s;box-shadow:0 0 40px rgba(184,255,87,0.3)}
+.video-thumb:hover .play-btn{transform:scale(1.12);box-shadow:0 0 0 18px rgba(184,255,87,0.1),0 0 40px rgba(184,255,87,0.3)}
+.play-icon{width:0;height:0;border-top:16px solid transparent;border-bottom:16px solid transparent;border-left:26px solid #07090f;margin-left:5px}
+.video-labels{position:absolute;bottom:20px;left:20px;right:20px;display:flex;gap:10px;flex-wrap:wrap;z-index:2}
+.video-label{background:rgba(7,9,15,0.8);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:0.75rem;font-weight:600;color:var(--text);backdrop-filter:blur(8px)}
+.video-caption{text-align:center;margin-top:14px;font-size:0.85rem;color:var(--muted)}
+.video-caption strong{color:var(--accent)}
+
+/* FEATURES */
+.features-header{text-align:center;margin-bottom:64px}
+.features-header .section-sub{margin:0 auto}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.feature-card{background:var(--bg2);padding:36px 32px;transition:background 0.25s}
+.feature-card:hover{background:var(--bg3)}
+.feature-icon{width:48px;height:48px;background:rgba(184,255,87,0.1);border:1px solid rgba(184,255,87,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px}
+.feature-card h3{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;letter-spacing:-0.01em}
+.feature-card p{font-size:0.88rem;color:var(--muted);line-height:1.65}
+
+/* COMPARISON */
+.comparison-section{background:var(--bg2)}
+.comparison-wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:52px}
+.comp-card{border-radius:20px;padding:40px 36px;position:relative;overflow:hidden}
+.comp-card.theirs{background:var(--card);border:1px solid rgba(255,255,255,0.07)}
+.comp-card.ours{background:rgba(184,255,87,0.05);border:1px solid rgba(184,255,87,0.3)}
+.comp-card.ours::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top left,rgba(184,255,87,0.08) 0%,transparent 70%);pointer-events:none}
+.comp-label{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.comp-label.bad{color:var(--muted)}
+.comp-label.good{color:var(--accent)}
+.comp-price{font-family:'Syne',sans-serif;font-size:3.2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;margin-bottom:8px}
+.comp-card.theirs .comp-price{color:#ff6b6b}
+.comp-card.ours .comp-price{color:var(--accent)}
+.comp-period{font-size:0.85rem;color:var(--muted);margin-bottom:28px}
+.comp-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.comp-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:var(--muted)}
+.comp-list li .icon{flex-shrink:0;margin-top:2px}
+.comp-list li.good{color:var(--text)}
+.comp-list li.good .icon{color:var(--accent)}
+.comp-list li.bad .icon{color:#ff6b6b}
+
+/* PRICING */
+.pricing-section{background:var(--bg)}
+.pricing-header{text-align:center;margin-bottom:60px}
+.pricing-header .section-sub{margin:0 auto}
+.pricing-card-wrap{max-width:520px;margin:0 auto;position:relative}
+.pricing-badge-top{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--accent);color:#07090f;font-size:0.7rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:6px 18px;border-radius:100px;white-space:nowrap;z-index:2}
+.pricing-card{background:var(--bg2);border:1px solid rgba(184,255,87,0.35);border-radius:24px;padding:52px 48px;position:relative;overflow:hidden;box-shadow:0 0 80px rgba(184,255,87,0.08),inset 0 1px 0 rgba(255,255,255,0.05)}
+.pricing-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(184,255,87,0.15) 0%,transparent 70%);pointer-events:none}
+.pricing-name{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px}
+.pricing-desc{font-size:0.88rem;color:var(--muted);margin-bottom:32px}
+.pricing-amount{display:flex;align-items:flex-end;gap:8px;margin-bottom:8px}
+.pricing-amount .price{font-family:'Syne',sans-serif;font-size:4.5rem;font-weight:800;color:var(--accent);line-height:1;letter-spacing:-0.04em}
+.pricing-amount .sup{font-size:1.8rem;font-family:'Syne',sans-serif;font-weight:700;color:var(--accent);margin-bottom:12px}
+.pricing-amount .period{font-size:0.9rem;color:var(--muted);margin-bottom:10px}
+.pricing-save{display:inline-flex;align-items:center;gap:6px;background:rgba(126,255,212,0.1);border:1px solid rgba(126,255,212,0.25);color:var(--accent2);font-size:0.82rem;font-weight:700;padding:5px 14px;border-radius:8px;margin-bottom:24px}
+.pricing-divider{height:1px;background:var(--border);margin-bottom:28px}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:24px}
+.pricing-features li{display:flex;align-items:flex-start;gap:12px;font-size:0.92rem;color:var(--text)}
+.pricing-features li .check{color:var(--accent);font-size:1rem;flex-shrink:0;margin-top:1px}
+.security-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+.sec-badge{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:6px 10px;font-size:0.73rem;font-weight:600;color:var(--muted)}
+.sec-badge .sec-icon{font-size:0.85rem}
+.btn-full{display:block;width:100%;background:var(--accent);color:#07090f;padding:17px;border-radius:12px;font-weight:800;font-size:1rem;text-align:center;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 30px rgba(184,255,87,0.25);border:none;cursor:pointer;font-family:'Manrope',sans-serif;letter-spacing:0.01em}
+.btn-full:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(184,255,87,0.35)}
+.pricing-note{text-align:center;margin-top:20px;font-size:0.8rem;color:var(--muted)}
+
+/* GUARANTEE */
+.guarantee-wrap{display:flex;justify-content:center;margin-top:36px}
+.guarantee-badge{display:flex;align-items:center;gap:20px;background:rgba(126,255,212,0.05);border:1px solid rgba(126,255,212,0.2);border-radius:20px;padding:24px 32px;max-width:480px;width:100%}
+.guarantee-seal{width:72px;height:72px;background:linear-gradient(135deg,rgba(126,255,212,0.15),rgba(184,255,87,0.1));border:2px solid var(--accent2);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem}
+.guarantee-seal small{font-size:0.5rem;font-weight:800;letter-spacing:0.06em;color:var(--accent2);text-transform:uppercase;line-height:1;margin-top:2px}
+.guarantee-text h4{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:4px;color:var(--accent2)}
+.guarantee-text p{font-size:0.83rem;color:var(--muted);line-height:1.55}
+
+/* TESTIMONIALS */
+.testimonials-section{background:var(--bg2)}
+.testimonials-header{text-align:center;margin-bottom:56px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-card{background:var(--bg3);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:28px 26px;transition:border-color 0.25s,transform 0.25s}
+.testi-card:hover{border-color:rgba(184,255,87,0.2);transform:translateY(-4px)}
+.testi-stars{color:var(--accent);font-size:0.85rem;margin-bottom:14px;letter-spacing:2px}
+.testi-text{font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:20px}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#07090f;flex-shrink:0}
+.testi-name{font-weight:700;font-size:0.88rem}
+.testi-role{font-size:0.78rem;color:var(--muted)}
+
+/* FAQ */
+.faq-wrap{max-width:700px;margin:0 auto}
+.faq-header{text-align:center;margin-bottom:52px}
+.faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color 0.2s}
+.faq-item:hover{border-color:rgba(184,255,87,0.25)}
+.faq-q{width:100%;background:none;border:none;color:var(--text);font-family:'Manrope',sans-serif;font-size:0.95rem;font-weight:600;text-align:left;padding:22px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q:hover{color:var(--accent)}
+.faq-arrow{font-size:1rem;transition:transform 0.3s;flex-shrink:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
+.faq-a-inner{padding:0 24px 20px;font-size:0.88rem;color:var(--muted);line-height:1.75}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-item.open{border-color:rgba(184,255,87,0.25)}
+
+/* CTA */
+.cta-section{padding:100px 40px;text-align:center;background:var(--bg2);position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(184,255,87,0.07) 0%,transparent 70%);pointer-events:none}
+.cta-section h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-0.03em;line-height:1.1;max-width:680px;margin:0 auto 16px}
+.cta-section p{color:var(--muted);font-size:1rem;margin-bottom:40px}
+
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;gap:28px}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.83rem;transition:color 0.2s}
+.footer-links a:hover{color:var(--accent)}
+.footer-copy{font-size:0.8rem;color:var(--muted)}
+
+/* STICKY MOBILE BAR */
+.sticky-mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--bg);border-top:1px solid var(--border);padding:12px 20px;backdrop-filter:blur(12px)}
+.sticky-mobile-bar button{width:100%;background:var(--accent);color:#07090f;border:none;border-radius:12px;padding:15px;font-family:'Manrope',sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:all 0.2s}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(7,9,15,0.88);backdrop-filter:blur(14px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.modal-overlay.active{opacity:1;pointer-events:all}
+.modal-box{background:var(--bg2);border:1px solid rgba(184,255,87,0.3);border-radius:24px;padding:48px 44px;max-width:460px;width:100%;position:relative;box-shadow:0 0 80px rgba(184,255,87,0.1),0 24px 60px rgba(0,0,0,0.6);transform:translateY(24px) scale(0.96);transition:transform 0.35s cubic-bezier(.34,1.56,.64,1);text-align:center}
+.modal-overlay.active .modal-box{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:16px;right:18px;background:none;border:none;color:var(--muted);font-size:1rem;cursor:pointer;padding:6px 10px;border-radius:8px;transition:color 0.2s,background 0.2s}
+.modal-close:hover{color:var(--text);background:rgba(255,255,255,0.07)}
+.modal-icon{font-size:3rem;margin-bottom:14px;display:block}
+.modal-title{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:10px}
+.modal-sub{font-size:0.9rem;color:var(--muted);line-height:1.65;margin-bottom:28px}
+.modal-input-wrap{position:relative;margin-bottom:8px}
+.modal-input{width:100%;background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.1);border-radius:12px;color:var(--text);font-family:'Manrope',sans-serif;font-size:1rem;padding:15px 46px 15px 18px;outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+.modal-input::placeholder{color:var(--muted)}
+.modal-input:focus{border-color:rgba(184,255,87,0.45);box-shadow:0 0 0 3px rgba(184,255,87,0.08)}
+.modal-input.valid{border-color:rgba(184,255,87,0.6)}
+.modal-input.invalid{border-color:rgba(255,107,107,0.55)}
+.input-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none}
+.modal-error{font-size:0.78rem;color:#ff6b6b;margin-bottom:20px;min-height:18px;opacity:0;transition:opacity 0.2s;text-align:left;padding-left:4px}
+.modal-error.show{opacity:1}
+.modal-pay-btn{width:100%;background:var(--accent);color:#07090f;border:none;border-radius:12px;padding:17px;font-family:'Manrope',sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:all 0.25s;box-shadow:0 4px 28px rgba(184,255,87,0.2);margin-bottom:16px;opacity:0.45;pointer-events:none;letter-spacing:0.01em}
+.modal-pay-btn.ready{opacity:1;pointer-events:all}
+.modal-pay-btn.ready:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(184,255,87,0.35)}
+.modal-note{font-size:0.78rem;color:var(--muted)}
+
+/* WHATSAPP */
+.whatsapp-btn{position:fixed;bottom:28px;right:28px;z-index:1000;display:flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:14px 20px 14px 16px;border-radius:100px;text-decoration:none;font-family:'Manrope',sans-serif;font-weight:700;font-size:0.88rem;box-shadow:0 4px 24px rgba(37,211,102,0.4),0 2px 8px rgba(0,0,0,0.3);transition:transform 0.25s,box-shadow 0.25s;animation:waPop 0.6s 1s cubic-bezier(.34,1.56,.64,1) both}
+.whatsapp-btn:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 10px 36px rgba(37,211,102,0.5)}
+.wa-label{white-space:nowrap}
+@keyframes waPop{from{opacity:0;transform:translateY(20px) scale(0.8)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .nav-links{display:none}
+  .features-grid{grid-template-columns:1fr 1fr}
+  .comparison-wrap{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .hiw-steps{grid-template-columns:1fr}
+  .hiw-arrow{display:none}
+  .ba-wrap{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:repeat(3,1fr)}
+  .sticky-mobile-bar{display:block}
+  .whatsapp-btn{bottom:88px}
+}
+@media(max-width:600px){
+  .features-grid,.tools-grid{grid-template-columns:1fr 1fr}
+  .pricing-card{padding:40px 24px}
+  footer{flex-direction:column;text-align:center}
+  .hero-stats{gap:32px}
+  .guarantee-badge{flex-direction:column;text-align:center}
+  .modal-box{padding:36px 20px}
+  .theme-toggle{top:auto;bottom:100px;right:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Light</button>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-icon">⚡</div>
+    Automation <span>Growth Hub</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#howitworks">How It Works</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#" onclick="openModal(event)" class="nav-cta">Get Started →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-badge"><span class="badge-dot"></span>Limited Offer — Save $1,000+</div>
+  <h1>The All-in-One CRM<br/>Agencies <em>Actually</em><br/>Need — For Less</h1>
+  <p class="hero-sub">Get full access to GoHighLevel — the #1 platform for funnels, automation, CRM, email, and more — through Automation Growth Hub at a fraction of the cost.</p>
+  <div class="hero-price-pill">
+    <div><div class="price-main"><sup>$</sup>164</div></div>
+    <div class="price-meta">
+      <div class="per">per year · full access</div>
+      <div class="save">🎉 Save over $1,000/year</div>
+    </div>
+    <div class="price-divider"></div>
+    <div class="was-price">
+      <div class="label">vs. retail</div>
+      <div class="amount">$1,164/yr</div>
+    </div>
+  </div>
+  <div class="hero-ctas">
+    <a href="#" onclick="openModal(event)" class="btn-primary">⚡ Claim Your Account</a>
+    <a href="#howitworks" class="btn-secondary">See How It Works ↓</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num" id="cnt-price">$0</div><div class="stat-label">Per Year Only</div></div>
+    <div class="stat"><div class="stat-num" id="cnt-save">$0</div><div class="stat-label">Annual Savings</div></div>
+    <div class="stat"><div class="stat-num" id="cnt-tools">0</div><div class="stat-label">Tools Included</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Contacts & Funnels</div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>⚡</span> CRM & Pipelines</div>
+    <div class="marquee-item"><span>🤖</span> Marketing Automation</div>
+    <div class="marquee-item"><span>📧</span> Email Marketing</div>
+    <div class="marquee-item"><span>💬</span> 2-Way SMS</div>
+    <div class="marquee-item"><span>📞</span> Calls & Voicemail Drop</div>
+    <div class="marquee-item"><span>🌐</span> Website & Funnel Builder</div>
+    <div class="marquee-item"><span>📅</span> Appointment Scheduling</div>
+    <div class="marquee-item"><span>⭐</span> Reputation Management</div>
+    <div class="marquee-item"><span>📊</span> Analytics & Reporting</div>
+    <div class="marquee-item"><span>💳</span> Payments & Invoices</div>
+    <div class="marquee-item"><span>⚡</span> CRM & Pipelines</div>
+    <div class="marquee-item"><span>🤖</span> Marketing Automation</div>
+    <div class="marquee-item"><span>📧</span> Email Marketing</div>
+    <div class="marquee-item"><span>💬</span> 2-Way SMS</div>
+    <div class="marquee-item"><span>📞</span> Calls & Voicemail Drop</div>
+    <div class="marquee-item"><span>🌐</span> Website & Funnel Builder</div>
+    <div class="marquee-item"><span>📅</span> Appointment Scheduling</div>
+    <div class="marquee-item"><span>⭐</span> Reputation Management</div>
+    <div class="marquee-item"><span>📊</span> Analytics & Reporting</div>
+    <div class="marquee-item"><span>💳</span> Payments & Invoices</div>
+  </div>
+</div>
+
+<!-- SLOTS LEFT -->
+<div class="slots-section">
+  <div class="slots-inner reveal">
+    <div class="slots-label">🔴 &nbsp;Only <strong>6 accounts left</strong> at this price — slots are filling fast</div>
+    <div class="slots-bar-wrap"><div class="slots-bar" id="slotsBar"></div></div>
+    <div class="slots-count"><strong>76%</strong> of discounted slots claimed — secure yours before they're gone</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="hiw-section" id="howitworks">
+  <div class="container">
+    <div class="hiw-header reveal">
+      <div class="section-tag">Simple Process</div>
+      <h2 class="section-title">Up & running in<br/>3 simple steps</h2>
+      <p class="section-sub">No tech skills needed. We handle the setup — you just start growing.</p>
+    </div>
+    <div class="hiw-steps reveal">
+      <div class="hiw-step">
+        <div class="hiw-arrow">→</div>
+        <div class="hiw-num">01</div>
+        <span class="hiw-icon">💳</span>
+        <h3>Pay Securely</h3>
+        <p>Click "Get Started", enter your email, and complete payment via Payoneer using your credit or debit card. Takes under 2 minutes.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-arrow">→</div>
+        <div class="hiw-num">02</div>
+        <span class="hiw-icon">📧</span>
+        <h3>Receive Your Account</h3>
+        <p>We send your GoHighLevel login credentials directly to your email within a few hours of payment confirmation. No waiting around.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">03</div>
+        <span class="hiw-icon">🚀</span>
+        <h3>Login & Start Growing</h3>
+        <p>Log in to GoHighLevel and immediately start building funnels, automating follow-ups, and closing more deals — from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS IT REPLACES -->
+<section class="tools-section" id="tools" style="background:var(--bg)">
+  <div class="container">
+    <div class="tools-header reveal">
+      <div class="section-tag">Stop Paying For All These</div>
+      <h2 class="section-title">GHL replaces<br/>all of these tools</h2>
+      <p class="section-sub">Businesses waste thousands juggling separate subscriptions. GoHighLevel eliminates them all — in one platform.</p>
+    </div>
+    <div class="tools-grid reveal">
+      <div class="tool-card"><span class="tool-x">REPLACED</span><span class="tool-emoji">📅</span><div class="tool-name">Calendly</div><div class="tool-price">$144/yr</div></div>
+      <div class="tool-card"><span class="tool-x">REPLACED</span><span class="tool-emoji">📧</span><div class="tool-name">Mailchimp</div><div class="tool-price">$240/yr</div></div>
+      <div class="tool-card"><span class="tool-x">REPLACED</span><span class="tool-emoji">🌐</span><div class="tool-name">ClickFunnels</div><div class="tool-price">$1,188/yr</div></div>
+      <div class="tool-card"><span class="tool-x">REPLACED</span><span class="tool-emoji">💼</span><div class="tool-name">HubSpot CRM</div><div class="tool-price">$540/yr</div></div>
+      <div class="tool-card"><span class="tool-x">REPLACED</span><span class="tool-emoji">⭐</span><div class="tool-name">Birdeye</div><div class="tool-price">$3,000/yr</div></div>
+    </div>
+    <div class="tools-total reveal">
+      <p>If you subscribed to all these separately, you'd pay:</p>
+      <div class="tools-vs">
+        <div class="vs-item"><div class="vs-num bad-price">$5,112</div><div class="vs-label">All tools separately</div></div>
+        <div class="vs-sep">→</div>
+        <div class="vs-item"><div class="vs-num good-price">$164</div><div class="vs-label">Automation Growth Hub</div></div>
+        <div class="vs-sep">=</div>
+        <div class="vs-item"><div class="vs-num save-price">$4,948</div><div class="vs-label">You save every year</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba-section" id="beforeafter">
+  <div class="container">
+    <div class="ba-header reveal">
+      <div class="section-tag">The Transformation</div>
+      <h2 class="section-title">Before vs. After<br/>GoHighLevel</h2>
+      <p class="section-sub">This is the real difference one platform makes for your business.</p>
+    </div>
+    <div class="ba-wrap reveal">
+      <div class="ba-col before">
+        <div class="ba-col-label">❌ &nbsp;Before GHL</div>
+        <div class="ba-list">
+          <div class="ba-item"><span class="bi">✗</span> Juggling 6+ separate tools daily</div>
+          <div class="ba-item"><span class="bi">✗</span> Paying $400–$500/month in subscriptions</div>
+          <div class="ba-item"><span class="bi">✗</span> Leads falling through the cracks</div>
+          <div class="ba-item"><span class="bi">✗</span> Manual follow-ups eating hours of your day</div>
+          <div class="ba-item"><span class="bi">✗</span> No clear view of your pipeline</div>
+          <div class="ba-item"><span class="bi">✗</span> Building funnels takes weeks & a developer</div>
+          <div class="ba-item"><span class="bi">✗</span> Inconsistent client communication</div>
+          <div class="ba-item"><span class="bi">✗</span> Zero automated review collection strategy</div>
+        </div>
+      </div>
+      <div class="ba-col after">
+        <div class="ba-col-label">✅ &nbsp;After GHL via Automation Growth Hub</div>
+        <div class="ba-list">
+          <div class="ba-item"><span class="bi" style="color:var(--accent)">✓</span> One dashboard for everything</div>
+          <div class="ba-item"><span class="bi" style="color:var(--accent)">✓</span> Just $164/year — all in</div>
+          <div class="ba-item"><span class="bi" style="color:var(--accent)">✓</span> Automated follow-ups capture every lead</div>
+          <div class="ba-item"><span class="bi" style="color:var(--accent)">✓</span> Workflows run 24/7 while you sleep</div>
+          <div class="ba-item"><span class="bi" style="color:var(--accent)">✓</span> Real-time pipeline visibility</div>
+          <div class="ba-item"><span class="bi" style="color:var(--accent)">✓</span> Funnels live in minutes with drag & drop</div>
+          <div class="ba-item"><span class="bi" style="color:var(--accent)">✓</span> Unified inbox: email, SMS, calls in one place</div>
+          <div class="ba-item"><span class="bi" style="color:var(--accent)">✓</span> Auto-collect 5-star Google reviews on autopilot</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO DEMO -->
+<section class="video-section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="video-header reveal">
+      <div class="section-tag">Platform Demo</div>
+      <h2 class="section-title">See GoHighLevel<br/>in action</h2>
+      <p class="section-sub">Watch how the platform works — funnels, automations, CRM, and more in one quick walkthrough.</p>
+    </div>
+    <div class="video-wrap reveal">
+      <div class="video-thumb" onclick="openVideoModal()">
+        <div class="video-grid-bg"></div>
+        <div class="play-btn"><div class="play-icon"></div></div>
+        <div class="video-labels">
+          <span class="video-label">⚡ Full Platform Walkthrough</span>
+          <span class="video-label">🕒 8 min overview</span>
+          <span class="video-label">🎯 See all features live</span>
+        </div>
+      </div>
+      <p class="video-caption">👆 Click to watch a <strong>full GoHighLevel platform demo</strong> — funnels, automations & CRM</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" style="background:var(--bg)">
+  <div class="container">
+    <div class="features-header reveal">
+      <div class="section-tag">Everything Included</div>
+      <h2 class="section-title">One platform.<br/>Unlimited power.</h2>
+      <p class="section-sub">GoHighLevel replaces a dozen separate tools. Get everything your business needs to automate, grow, and dominate.</p>
+    </div>
+    <div class="features-grid reveal">
+      <div class="feature-card"><div class="feature-icon">🤖</div><h3>Marketing Automation</h3><p>Build powerful workflows that follow up with leads automatically — email, SMS, voicemail, and more — running 24/7 without lifting a finger.</p></div>
+      <div class="feature-card"><div class="feature-icon">📊</div><h3>CRM & Sales Pipelines</h3><p>Manage every lead and deal in a visual pipeline. Never lose a prospect again with automated follow-ups and stage-based triggers.</p></div>
+      <div class="feature-card"><div class="feature-icon">🌐</div><h3>Funnel & Website Builder</h3><p>Create high-converting funnels and websites with a drag-and-drop builder. No coding needed. Launch campaigns in minutes.</p></div>
+      <div class="feature-card"><div class="feature-icon">📅</div><h3>Appointment Booking</h3><p>Let clients schedule calls and meetings on autopilot. Sync with Google Calendar, send reminders, and eliminate no-shows.</p></div>
+      <div class="feature-card"><div class="feature-icon">💬</div><h3>2-Way SMS & Email</h3><p>Engage leads via SMS and email from one unified inbox. Run bulk campaigns or personalized 1:1 conversations with ease.</p></div>
+      <div class="feature-card"><div class="feature-icon">⭐</div><h3>Reputation Management</h3><p>Automatically request Google and Facebook reviews from happy customers. Monitor and respond to reviews from a single dashboard.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison-section" id="compare">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-tag">Why Us?</div>
+      <h2 class="section-title">Stop overpaying.<br/>Start growing.</h2>
+      <p class="section-sub">The exact same GoHighLevel platform — at 86% less than retail price. No catch.</p>
+    </div>
+    <div class="comparison-wrap reveal">
+      <div class="comp-card theirs">
+        <div class="comp-label bad">❌ &nbsp;GoHighLevel Direct</div>
+        <div class="comp-price">$1,164</div>
+        <div class="comp-period">per year ($97/month)</div>
+        <ul class="comp-list">
+          <li class="bad"><span class="icon">✗</span> Full retail price every month</li>
+          <li class="bad"><span class="icon">✗</span> No discounts or deals</li>
+          <li class="bad"><span class="icon">✗</span> No onboarding support</li>
+          <li class="bad"><span class="icon">✗</span> You're on your own to figure it out</li>
+          <li class="bad"><span class="icon">✗</span> No community or extra resources</li>
+        </ul>
+      </div>
+      <div class="comp-card ours">
+        <div class="comp-label good">✅ &nbsp;Automation Growth Hub</div>
+        <div class="comp-price">$164</div>
+        <div class="comp-period">per year — all in, one payment</div>
+        <ul class="comp-list">
+          <li class="good"><span class="icon">✓</span> Same full GoHighLevel access</li>
+          <li class="good"><span class="icon">✓</span> Save over $1,000 every year</li>
+          <li class="good"><span class="icon">✓</span> Onboarding & setup support included</li>
+          <li class="good"><span class="icon">✓</span> 7-day money-back guarantee</li>
+          <li class="good"><span class="icon">✓</span> Automation Growth Hub community access</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--bg)">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <div class="section-tag">Pricing</div>
+      <h2 class="section-title">One plan. No surprises.</h2>
+      <p class="section-sub">Simple, transparent pricing. Pay once per year and get everything GoHighLevel has to offer.</p>
+    </div>
+    <div class="pricing-card-wrap reveal">
+      <div class="pricing-badge-top">🔥 Best Value · Save $1,000+</div>
+      <div class="pricing-card">
+        <div class="pricing-name">Full GoHighLevel Access</div>
+        <div class="pricing-desc">Everything you need to automate your business and scale revenue — powered by GoHighLevel.</div>
+        <div class="pricing-amount">
+          <span class="sup">$</span><span class="price">164</span><span class="period">&nbsp;/ year</span>
+        </div>
+        <div class="pricing-save">🎉 You save $1,000+ vs. retail price</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Full GoHighLevel Platform Access</li>
+          <li><span class="check">✓</span> Unlimited Contacts & CRM</li>
+          <li><span class="check">✓</span> Funnels & Website Builder</li>
+          <li><span class="check">✓</span> Email & SMS Automations</li>
+          <li><span class="check">✓</span> Appointment Scheduling System</li>
+          <li><span class="check">✓</span> Reputation Management Tools</li>
+          <li><span class="check">✓</span> Pipelines & Deal Tracking</li>
+          <li><span class="check">✓</span> Analytics & Reporting Dashboard</li>
+          <li><span class="check">✓</span> 2-Way Calling & Voicemail Drop</li>
+          <li><span class="check">✓</span> Onboarding Support from Our Team</li>
+        </ul>
+        <div class="security-badges">
+          <div class="sec-badge"><span class="sec-icon">🔒</span> SSL Secured</div>
+          <div class="sec-badge"><span class="sec-icon">✅</span> Payoneer Verified</div>
+          <div class="sec-badge"><span class="sec-icon">🛡️</span> 7-Day Guarantee</div>
+          <div class="sec-badge"><span class="sec-icon">⚡</span> Instant Delivery</div>
+        </div>
+        <button class="btn-full" onclick="openModal(event)">⚡ Get Started for $164/year →</button>
+      </div>
+      <p class="pricing-note">🔒 Secure checkout via Payoneer · Annual billing · Cancel anytime</p>
+    </div>
+    <div class="guarantee-wrap reveal">
+      <div class="guarantee-badge">
+        <div class="guarantee-seal">🛡️<small>7-Day</small></div>
+        <div class="guarantee-text">
+          <h4>7-Day Money-Back Guarantee</h4>
+          <p>Not happy within your first 7 days? We'll give you a full refund — no questions asked. We stand 100% behind what we deliver.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div class="section-tag">Testimonials</div>
+      <h2 class="section-title">Loved by businesses like yours</h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I was paying $97/month for GHL directly. Switching through Automation Growth Hub saved me over $1,000 this year alone. Same platform, way cheaper."</p>
+        <div class="testi-author"><div class="testi-avatar" style="background:#b8ff57;">JR</div><div><div class="testi-name">James R.</div><div class="testi-role">Digital Marketing Agency</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Setup was seamless and onboarding support was fantastic. Within a week I had my funnels and automations running. This deal is absolutely unreal."</p>
+        <div class="testi-author"><div class="testi-avatar" style="background:#7effd4;">SK</div><div><div class="testi-name">Sarah K.</div><div class="testi-role">Real Estate Coach</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Replaced my separate email tool, booking software, and CRM all with GHL. Saving money AND running leaner. Automation Growth Hub is the real deal."</p>
+        <div class="testi-author"><div class="testi-avatar" style="background:#ffd57e;">MP</div><div><div class="testi-name">Marcus P.</div><div class="testi-role">E-commerce Brand Owner</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--bg)">
+  <div class="container">
+    <div class="faq-wrap">
+      <div class="faq-header reveal"><div class="section-tag">FAQ</div><h2 class="section-title">Got questions?</h2></div>
+      <div class="reveal">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Is this the real GoHighLevel platform? <span class="faq-arrow">▾</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes — 100%. You get a real, fully functional GoHighLevel sub-account with access to every feature. We're an authorized agency reseller that passes savings directly to you.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Why is it so much cheaper than buying direct? <span class="faq-arrow">▾</span></button>
+          <div class="faq-a"><div class="faq-a-inner">As an agency partner, we get volume pricing on GoHighLevel accounts and pass those savings directly to our customers. You get the full product at a fraction of the retail price.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What features are included? <span class="faq-arrow">▾</span></button>
+          <div class="faq-a"><div class="faq-a-inner">The complete GHL suite: CRM, funnels & websites, email marketing, 2-way SMS, automation workflows, appointment booking, reputation management, analytics, pipelines, calling, and more — all at $164/year.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Is there a money-back guarantee? <span class="faq-arrow">▾</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes! Full 7-day money-back guarantee. Not happy for any reason within your first 7 days? We refund you completely, no questions asked.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How quickly will I receive my account? <span class="faq-arrow">▾</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Usually within a few hours of payment confirmation. We'll send your GoHighLevel login credentials to the email you provide during checkout.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Do you offer onboarding support? <span class="faq-arrow">▾</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Absolutely. Our team at Automation Growth Hub helps you get set up, walks you through the platform, and answers any questions so you hit the ground running from day one.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="section-tag">Limited Offer</div>
+  <h2>Ready to grow without<br/><em style="color:var(--accent);font-style:normal;">overpaying?</em></h2>
+  <p>Join businesses already using GoHighLevel through Automation Growth Hub — and keep $1,000+ in your pocket every year.</p>
+  <a href="#" onclick="openModal(event)" class="btn-primary" style="font-size:1.05rem;padding:18px 44px;">⚡ Get GoHighLevel for $164/yr</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Automation <span>Growth Hub</span></div>
+  <div class="footer-links">
+    <a href="#howitworks">How It Works</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="footer-copy">© 2025 Automation Growth Hub. All rights reserved.</div>
+</footer>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-mobile-bar">
+  <button onclick="openModal(event)">⚡ Get GoHighLevel — $164/yr</button>
+</div>
+
+<!-- EMAIL MODAL -->
+<div class="modal-overlay" id="emailModal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-icon">📧</div>
+    <h3 class="modal-title">Almost there!</h3>
+    <p class="modal-sub">Enter your email so we can send your GoHighLevel account details right after your payment is confirmed.</p>
+    <div class="modal-input-wrap">
+      <input type="email" id="clientEmail" placeholder="yourname@email.com" class="modal-input" oninput="validateEmail()" onkeydown="handleEnter(event)" autocomplete="email"/>
+      <span class="input-icon">✉️</span>
+    </div>
+    <div class="modal-error" id="emailError">Please enter a valid email address.</div>
+    <button class="modal-pay-btn" id="payBtn" onclick="proceedToPayment()">💳 Proceed to Payment — $164/yr</button>
+    <p class="modal-note">🔒 Your email is only used to deliver your account. We never spam.</p>
+  </div>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/923103752266?text=Hi!%20I'd%20like%20to%20purchase%20the%20GoHighLevel%20plan%20for%20%24164%2Fyear." target="_blank" class="whatsapp-btn" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-label">Chat on WhatsApp</span>
+</a>
+
+<script>
+const PAYONEER_URL = 'https://link.payoneer.com/Token?t=CC8C4EF6BCDD40B3B06CFFC83F579D8B&src=pl';
+const WHATSAPP_NUM = '923103752266';
+
+/* ── THEME TOGGLE ── */
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.getElementById('themeBtn');
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  btn.textContent = isDark ? '🌙 Dark' : '☀️ Light';
+}
+
+/* ── MODAL ── */
+function openModal(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('emailModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('clientEmail').focus(), 350);
+}
+function closeModal() {
+  document.getElementById('emailModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('emailModal')) closeModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+function handleEnter(e) {
+  if (e.key === 'Enter' && document.getElementById('payBtn').classList.contains('ready')) proceedToPayment();
+}
+function validateEmail() {
+  const input = document.getElementById('clientEmail');
+  const btn = document.getElementById('payBtn');
+  const err = document.getElementById('emailError');
+  const val = input.value.trim();
+  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  input.classList.toggle('valid', valid);
+  input.classList.toggle('invalid', val.length > 0 && !valid);
+  err.classList.toggle('show', val.length > 0 && !valid);
+  btn.classList.toggle('ready', valid);
+}
+function proceedToPayment() {
+  const email = document.getElementById('clientEmail').value.trim();
+  if (!email) return;
+  const msg = encodeURIComponent(`🔔 New Payment Alert!\n\nA client is about to pay.\n📧 Email: ${email}\n\nSend their GHL account link after payment is confirmed.`);
+  window.open(`https://wa.me/${WHATSAPP_NUM}?text=${msg}`, '_blank');
+  setTimeout(() => window.open(PAYONEER_URL, '_blank'), 300);
+  closeModal();
+}
+
+/* ── VIDEO ── */
+function openVideoModal() {
+  alert('📹 Add your demo video here!\n\nReplace this placeholder with a YouTube or Loom embed link to show clients a real GoHighLevel walkthrough.');
+}
+
+/* ── FAQ ── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-a').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+/* ── ANIMATED COUNTERS ── */
+function animateCounter(el, target, prefix, suffix, duration) {
+  let start = 0;
+  const step = 16;
+  const steps = duration / step;
+  const inc = target / steps;
+  const timer = setInterval(() => {
+    start += inc;
+    if (start >= target) { start = target; clearInterval(timer); }
+    el.textContent = prefix + Math.round(start).toLocaleString() + suffix;
+  }, step);
+}
+let countersDone = false;
+function runCounters() {
+  if (countersDone) return;
+  countersDone = true;
+  animateCounter(document.getElementById('cnt-price'), 164, '$', '', 1400);
+  animateCounter(document.getElementById('cnt-save'), 1000, '$', 'K+', 1800);
+  animateCounter(document.getElementById('cnt-tools'), 50, '', '+', 1200);
+}
+
+/* ── SLOTS BAR ANIMATION ── */
+let slotsDone = false;
+function animateSlots() {
+  if (slotsDone) return;
+  slotsDone = true;
+  document.getElementById('slotsBar').style.width = '76%';
+}
+
+/* ── SCROLL REVEAL ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── HERO STATS COUNTER TRIGGER ── */
+const heroObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) { setTimeout(runCounters, 400); }
+}, { threshold: 0.3 });
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) heroObserver.observe(heroStats);
+
+/* ── SLOTS TRIGGER ── */
+const slotsObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) { setTimeout(animateSlots, 400); }
+}, { threshold: 0.5 });
+const slotsEl = document.querySelector('.slots-section');
+if (slotsEl) slotsObserver.observe(slotsEl);
+</script>
+</body>
+</html>
